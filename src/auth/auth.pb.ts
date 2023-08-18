@@ -43,7 +43,7 @@ export const AUTH_PACKAGE_NAME = "auth";
 export interface AuthServiceClient {
   register(request: RegisterRequest): Observable<RegisterResponse>;
 
-  login(request: LoginRequest): Observable<RegisterResponse>;
+  login(request: LoginRequest): Observable<LoginResponse>;
 
   validate(request: ValidateRequest): Observable<ValidateReponse>;
 }
@@ -51,7 +51,7 @@ export interface AuthServiceClient {
 export interface AuthServiceController {
   register(request: RegisterRequest): Promise<RegisterResponse> | Observable<RegisterResponse> | RegisterResponse;
 
-  login(request: LoginRequest): Promise<RegisterResponse> | Observable<RegisterResponse> | RegisterResponse;
+  login(request: LoginRequest): Promise<LoginResponse> | Observable<LoginResponse> | LoginResponse;
 
   validate(request: ValidateRequest): Promise<ValidateReponse> | Observable<ValidateReponse> | ValidateReponse;
 }
