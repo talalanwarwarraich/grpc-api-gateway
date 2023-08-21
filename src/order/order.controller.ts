@@ -15,7 +15,7 @@ import {
 } from './order.pb';
 import { ClientGrpc } from '@nestjs/microservices';
 import { Observable } from 'rxjs';
-import { AuthGuard } from 'src/auth/auth.guard';
+// import { AuthGuard } from 'src/auth/auth.guard';
 
 @Controller('order')
 export class OrderController implements OnModuleInit {
@@ -29,7 +29,7 @@ export class OrderController implements OnModuleInit {
   }
 
   @Post()
-  @UseGuards(AuthGuard)
+  // @UseGuards(AuthGuard)
   private async createOrder(
     @Body() body: CreateOrderRequest,
     @Req() req: Request & { userId: number },

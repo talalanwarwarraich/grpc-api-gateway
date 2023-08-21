@@ -17,7 +17,7 @@ import {
   ProductServiceClient,
 } from './product.pb';
 import { ClientGrpc } from '@nestjs/microservices';
-import { AuthGuard } from 'src/auth/auth.guard';
+// import { AuthGuard } from 'src/auth/auth.guard';
 import { Observable } from 'rxjs';
 
 @Controller('product')
@@ -33,7 +33,7 @@ export class ProductController implements OnModuleInit {
   }
 
   @Post()
-  @UseGuards(AuthGuard)
+  // @UseGuards(AuthGuard)
   private async createProduct(
     @Body() body: CreateProductRequesst,
   ): Promise<Observable<CreateProductResponse>> {
@@ -41,7 +41,7 @@ export class ProductController implements OnModuleInit {
   }
 
   @Get(':id')
-  @UseGuards(AuthGuard)
+  // @UseGuards(AuthGuard)
   private async findOne(
     @Param('id', ParseIntPipe) id: number,
   ): Promise<Observable<FindOneResponse>> {
